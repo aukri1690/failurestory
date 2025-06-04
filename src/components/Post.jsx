@@ -1,4 +1,5 @@
-import { Field, Input, Textarea, Button } from "@chakra-ui/react"
+import { Flex, Button, Card, Field, Input, Textarea, Stack } from "@chakra-ui/react"
+
 import { useState } from "react";
 import styled from 'styled-components';
 
@@ -20,41 +21,48 @@ const Post = () => {
     };
 
     return (
-        <>
-            <Field.Root required>
-                <Input
-                    placeholder="Enter title"
-                    variant="subtle"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-            </Field.Root>
-
-            <Textarea
-                colorPalette='purple'
-                size="xl"
-                autoresize
-                variant="subtle"
-                placeholder="Enter your failure story"
-                value={contents}
-                onChange={(e) => setContents(e.target.value)}
-            />
-
-            <Button
-                onClick={handlePost}
-                colorPalette={'purple'}
-                variant="surface">
-                Post
-            </Button>
+        <Flex minH="100vh" align="center" justify="center" flexDir="column" gap={6}>
+            <Card.Root maxW="sm">
+                <Card.Body>
+                    <Stack gap="4" w="full">
+                        <Field.Root required>
+                            <Input
+                                placeholder="タイトル"
+                                variant="subtle"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                        </Field.Root>
+                        <Field.Root required>
+                            <Textarea
+                                autoresize
+                                placeholder="内容を入力"
+                                variant="subtle"
+                                value={contents}
+                                onChange={(e) => setContents(e.target.value)}
+                            />
+                        </Field.Root>
+                    </Stack>
+                </Card.Body>
+                <Card.Footer justifyContent="center">
+                    <Button
+                        onClick={handlePost}
+                        colorPalette="green"
+                        variant="surface">
+                        投稿する
+                    </Button>
+                </Card.Footer>
+            </Card.Root>
 
             {posts.map((item, idx) => (
-            <StyledWrapper key={idx}>
-                <Title>{item.title}</Title>
-                <Contents>{item.contents}</Contents>
-                <DeleteButton onClick={() => handleDelete(idx)}>削除</DeleteButton>
-            </StyledWrapper>
-        ))}
-        </>
+                <StyledWrapper key={idx}>
+                    <Title>{item.title}</Title>
+                    <Contents>{item.contents}</Contents>
+                    <DeleteButton onClick={() => handleDelete(idx)}>削除</DeleteButton>
+                </StyledWrapper>
+            ))}
+
+        </Flex>
     );
 };
 
