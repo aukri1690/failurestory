@@ -12,42 +12,39 @@ const Login = () => {
         <Flex minH="100vh" align="center" justify="center">
             <Card.Root maxW="sm">
                 <Card.Header>
-                    <Card.Title textAlign="center">Sign up</Card.Title>
-                    <Card.Description>
-                        Fill in the form below to create an account
-                    </Card.Description>
+                    <Card.Title textAlign="center">ログイン</Card.Title>
                 </Card.Header>
                 <Card.Body>
                     <Stack gap="4" w="full">
                         <Field.Root required>
                             <Field.Label>
-                                Username
+                                ユーザー名
                                 <Field.RequiredIndicator />
                             </Field.Label>
                             <Input
-                                placeholder="Enter your username"
+                                placeholder="ユーザー名を入力"
                                 variant="subtle"
                                 css={{ "--focus-color": "purple" }}
                             />
                         </Field.Root>
                         <Field.Root required>
                             <Field.Label>
-                                Email
+                                メールアドレス
                                 <Field.RequiredIndicator />
                             </Field.Label>
                             <Input
-                                placeholder="Enter your email"
+                                placeholder="メールアドレスを入力"
                                 variant="subtle"
                                 css={{ "--focus-color": "purple" }}
                             />
                         </Field.Root>
                         <Field.Root required>
                             <Field.Label>
-                                Password
+                                パスワード
                                 <Field.RequiredIndicator />
                             </Field.Label>
                             <PasswordInput
-                                placeholder="Enter your password"
+                                placeholder="パスワードを入力"
                                 variant="subtle"
                                 css={{ "--focus-color": "purple" }}
                             />
@@ -56,7 +53,7 @@ const Login = () => {
                 </Card.Body>
                 <Card.Footer justifyContent="center">
                     <Button onClick={goToPost} colorPalette="purple" variant="surface">
-                        Sign up
+                        ログイン
                     </Button>
                 </Card.Footer>
             </Card.Root>
