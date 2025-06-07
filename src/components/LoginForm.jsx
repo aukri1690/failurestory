@@ -2,7 +2,7 @@ import { Button, Card, Field, Input, Stack, Flex } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { PasswordInput } from "@/components/ui/password-input";
 
-const Login = () => {
+const LoginForm = () => {
     const navigate = useNavigate();
     const goToPost = () => {
         navigate("/post");
@@ -61,4 +61,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginForm;
